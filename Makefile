@@ -29,6 +29,23 @@ use-npm-backdrop:
 	cd tests; npm uninstall @whi/holochain-backdrop
 	cd tests; npm install --save-dev @whi/holochain-backdrop
 
+use-local-into-struct:
+	cd tests; npm uninstall @whi/into-struct
+	cd tests; npm install --save-dev ../../projects/js-into-struct/
+use-npm-into-struct:
+	cd tests; npm uninstall @whi/into-struct
+	cd tests; npm install --save-dev @whi/into-struct
+
+
+
+#
+# Packages
+#
+preview-crate:			test-debug
+	cargo publish --dry-run --allow-dirty
+publish-crate:			test-debug
+	CARGO_HOME=$(HOME)/.cargo cargo publish
+
 
 
 #
@@ -41,9 +58,8 @@ test-setup:			tests/node_modules
 test:				test-unit test-integration
 test-debug:			test-unit test-integration-debug
 
-test-unit:			test-unit-coop_content
-test-unit-%:
-	cd zomes;		RUST_BACKTRACE=1 cargo test $* -- --nocapture
+test-unit:
+	RUST_BACKTRACE=1 cargo test -- --nocapture
 
 MODEL_DNA			= tests/model_dna.dna
 
