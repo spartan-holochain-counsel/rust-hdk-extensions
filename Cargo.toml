@@ -1,10 +1,10 @@
 [package]
 name = "whi_hdk_extensions"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Matthew Brisebois <matthew@webheroes.ca>"]
 edition = "2018"
 license = "CAL-1.0"
-repository = "https://github.com/mjbrisebois/rust-hdi-extensions"
+repository = "https://github.com/mjbrisebois/rust-hdk-extensions"
 description = "Code that works in tandem or is complimentary to the Holochain `hdk` crate"
 readme = "README.md"
 
