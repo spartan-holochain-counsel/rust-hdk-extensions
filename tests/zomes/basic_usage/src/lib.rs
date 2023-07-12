@@ -1,3 +1,8 @@
+pub use hdk_extensions::hdi;
+pub use hdk_extensions::hdk;
+pub use hdk_extensions::hdi_extensions;
+pub use hdk_extensions;
+
 use hdi::prelude::*;
 use hdk::prelude::debug;
 use hdi_extensions::{

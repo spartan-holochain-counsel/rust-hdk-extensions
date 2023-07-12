@@ -1,13 +1,16 @@
+pub use hdk_extensions::hdi;
+pub use hdk_extensions::hdk;
+pub use hdk_extensions::hdi_extensions;
+
 use hdk::prelude::*;
 use hdk_extensions::{
     must_get,
-    // Entity, MorphAddr,
-
-    // HDI Extensions
-    ScopedTypeConnector,
     // Inputs
     GetEntityInput,
     UpdateEntryInput,
+};
+use hdi_extensions::{
+    ScopedTypeConnector,
 };
 use basic_usage::{
     PostEntry,

@@ -1,21 +1,23 @@
+pub use hdi_extensions::hdi;
+pub use hdi_extensions::holo_hash;
+pub use hdk;
+pub use hdi_extensions;
+
 use core::convert::{ TryFrom, TryInto };
 use hdk::prelude::{
-    hdi,
     get, get_details, agent_info,
     debug, wasm_error,
     Serialize, Deserialize,
     ExternResult, WasmError, WasmErrorInner, GetOptions,
-    AgentPubKey, ActionHash, AnyDhtHash, AnyLinkableHash,
     Record, Action, Details, RecordDetails, SignedHashed,
     LinkTypeFilter, LinkTypeFilterExt, LinkTag,
 };
-use hdk::prelude::holo_hash::{
+use holo_hash::{
+    AgentPubKey, ActionHash, AnyDhtHash, AnyLinkableHash,
     AnyLinkableHashPrimitive,
 };
 use thiserror::Error;
-
-pub use hdi_extensions;
-pub use hdi_extensions::*;
+use hdi_extensions::*;
 
 
 
@@ -176,12 +178,12 @@ pub fn agent_id() -> ExternResult<AgentPubKey> {
 /// ok result will always be a [`Record`].
 pub fn must_get<T>(addr: &T) -> ExternResult<Record>
 where
-    T: Into<AnyDhtHash> + Clone + std::fmt::Debug,
+    T: Clone + std::fmt::Debug,
+    AnyDhtHash: From<T>,
 {
-    let addr : AnyDhtHash = addr.to_owned().into();
     Ok(
-        get( addr.clone(), GetOptions::latest() )?
-            .ok_or(HdkExtError::RecordNotFound(&addr))?
+        get( addr.to_owned(), GetOptions::latest() )?
+            .ok_or(HdkExtError::RecordNotFound(&addr.to_owned().into()))?
     )
 }
 
