@@ -806,9 +806,9 @@ checksum = "2c6201b9ff9fd90a5a3bac2e56a830d0caa509576f0e503818ee82c181b3437a"
 
 [[package]]
 name = "hdi"
-version = "0.4.0-beta-dev.4"
+version = "0.4.0-beta-dev.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c2c005cae3b2cec045c79386752cae91f453bdfc668f2842eabeede0277cf00a"
+checksum = "97eb05fc2340dfa96a3a5395b3fded441d5d24131e015ee6ef880224ba0bdbed"
 dependencies = [
  "hdk_derive",
  "holo_hash",
@@ -823,9 +823,9 @@ dependencies = [
 
 [[package]]
 name = "hdk"
-version = "0.3.0-beta-dev.5"
+version = "0.3.0-beta-dev.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "abd2b431072345c588564b8b66d10dd251d59d3b0f24f5be9ddc4847b553a0d9"
+checksum = "557ed8c4b8c390ded176ef527ccb352af723014a47a5871f85deced7df494f8d"
 dependencies = [
  "getrandom",
  "hdi",
@@ -843,9 +843,9 @@ dependencies = [
 
 [[package]]
 name = "hdk_derive"
-version = "0.3.0-beta-dev.4"
+version = "0.3.0-beta-dev.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2616f437c6831e3bb80867ad58b9b82506428306fedf2bf2434558e1bcf76e95"
+checksum = "a28950f364c5ab07e4b580d9a84ab23896ba6009aafc789d38b2e7f49d2d2c2a"
 dependencies = [
  "darling 0.14.4",
  "heck",
@@ -886,9 +886,9 @@ checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
 name = "holo_hash"
-version = "0.3.0-beta-dev.3"
+version = "0.3.0-beta-dev.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c021c6f9b5c2dd782bc7b73b8ba26c7be7b42bfaabac2474129d358fd32a6610"
+checksum = "34637ebb1b7d8febde001d045c4be8d39a0148eb99730ee47f42fad0b83b533c"
 dependencies = [
  "base64",
  "blake2b_simd",
@@ -903,13 +903,12 @@ dependencies = [
 
 [[package]]
 name = "holochain_integrity_types"
-version = "0.3.0-beta-dev.4"
+version = "0.3.0-beta-dev.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a7d17f2e71fdffa79970586287735d7dab411a837242aa24d443aa672418f3d9"
+checksum = "ddebed5d15a02df2c51e2a791a7baf6854cf172d7d502a1f22375eab21446969"
 dependencies = [
  "holo_hash",
  "holochain_serialized_bytes",
- "kitsune_p2p_dht",
  "kitsune_p2p_timestamp",
  "paste",
  "serde",
@@ -974,9 +973,9 @@ dependencies = [
 
 [[package]]
 name = "holochain_zome_types"
-version = "0.3.0-beta-dev.4"
+version = "0.3.0-beta-dev.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "54fff1cf4cdfada056078d75c1d1035bcfaf7e55c6696a847783549cc9898d15"
+checksum = "efb5226c2d95a0021e06f951c9012e0377c225479e2c6295cfc1bfe6e72cdeeb"
 dependencies = [
  "holo_hash",
  "holochain_integrity_types",
@@ -2609,9 +2608,9 @@ dependencies = [
 
 [[package]]
 name = "whi_hdi_extensions"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "62959e1b5bc28e2cb9a8a5792e5a80ba2fa1fcbf4a82ada1a4f4f1ce7c4b6c60"
+checksum = "a18ac3d2c802f5b90a09b512f06419443f64cbe103a803677dba670499b80e8a"
 dependencies = [
  "hdi",
  "holo_hash",
