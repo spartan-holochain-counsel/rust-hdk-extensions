@@ -11,6 +11,8 @@ Code that works in tandem or is complimentary to the [`hdk`](https://docs.rs/hdk
 
 ### Usage
 
+[Version table](./VERSIONS.md)
+
 See [https://docs.rs/whi_hdk_extensions](https://docs.rs/whi_hdk_extensions)
 
 
