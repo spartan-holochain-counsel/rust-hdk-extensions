@@ -4,6 +4,10 @@ pub use hdk;
 pub use hdi_extensions;
 
 use core::convert::{ TryFrom, TryInto };
+use hdi_extensions::{
+    summon_action,
+    summon_entry,
+};
 use hdk::prelude::{
     get, get_details, agent_info,
     debug, wasm_error,
@@ -14,7 +18,7 @@ use hdk::prelude::{
 };
 use holo_hash::{
     AgentPubKey, ActionHash, AnyDhtHash, AnyLinkableHash,
-    AnyLinkableHashPrimitive,
+    AnyDhtHashPrimitive, AnyLinkableHashPrimitive,
 };
 use thiserror::Error;
 use hdi_extensions::*;
@@ -171,11 +175,11 @@ pub fn agent_id() -> ExternResult<AgentPubKey> {
 //
 /// Get a [`Record`] or return a "not found" error
 ///
-/// The difference between this `must_get` and `hdi`'s `must_get_valid_record` is that this one can
-/// also handle an `EntryHash` address.
+/// The difference between this `must_get` and `hdk`'s `get` is that this one replaces a `None` response
+/// with [`HdkExtError::RecordNotFound`] so that an ok result will always be a [`Record`].
 ///
-/// It calls [`get`] and replaces a `None` response with [`HdkExtError::RecordNotFound`] so that an
-/// ok result will always be a [`Record`].
+/// **NOTE:** Not to be confused with the `hdi`'s meaning of 'must'.  This 'must' will not retrieve
+/// deleted records.
 pub fn must_get<T>(addr: &T) -> ExternResult<Record>
 where
     T: Clone + std::fmt::Debug,
@@ -208,8 +212,24 @@ where
     T: Clone + std::fmt::Debug,
     AnyDhtHash: From<T>,
 {
-    debug!("Checking if entry {:?} exists", addr );
-    Ok( get( addr.to_owned(), GetOptions::content() )?.is_some() )
+    debug!("Checking if address {:?} exists", addr );
+    Ok(
+        match AnyDhtHash::from(addr.to_owned()).into_primitive() {
+            AnyDhtHashPrimitive::Action(addr) => summon_action( &addr ).is_ok(),
+            AnyDhtHashPrimitive::Entry(addr) => summon_entry( &addr ).is_ok(),
+        }
+    )
+}
+
+
+/// Check if a DHT address can be fetched and is not deleted
+pub fn available<T>(addr: &T) -> ExternResult<bool>
+where
+    T: Clone + std::fmt::Debug,
+    AnyDhtHash: From<T>,
+{
+    debug!("Checking if address {:?} is available", addr );
+    Ok( get( addr.to_owned(), GetOptions::latest() )?.is_some() )
 }
 
 
@@ -231,9 +251,7 @@ where
     match addr.into_primitive() {
         AnyLinkableHashPrimitive::Entry(entry_hash) => {
             Ok(
-                get( entry_hash.to_owned(), GetOptions::latest() )?
-                    .ok_or(HdkExtError::RecordNotFound(&entry_hash.into()))?
-                    .action_address().to_owned()
+                must_get( &entry_hash )?.action_address().to_owned()
             )
         },
         AnyLinkableHashPrimitive::Action(action_hash) => Ok( action_hash ),

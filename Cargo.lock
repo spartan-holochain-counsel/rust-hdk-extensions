@@ -2638,9 +2638,9 @@ dependencies = [
 
 [[package]]
 name = "whi_hdi_extensions"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c74047ef3ffbd822bf01ed3a9a8877e448f4184538d55eda74d7d8ff0f8aaf91"
+checksum = "2e54dce41f91708d68ef32b84b4f262d93eca988559db1f680c41bcd35332d9e"
 dependencies = [
  "hdi",
  "holo_hash",

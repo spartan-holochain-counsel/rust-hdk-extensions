@@ -15,5 +15,5 @@ name = "hdk_extensions"
 hdk = "=0.2.2"
 serde = "1"
 thiserror = "1"
-whi_hdi_extensions = "0.3.0"
+whi_hdi_extensions = "0.4.0"
 # whi_hdi_extensions = { path = "../whi_hdi_extensions" }

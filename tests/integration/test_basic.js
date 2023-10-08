@@ -45,10 +45,12 @@ function basic_tests () {
 
     it("should create group via alice (A1)", async function () {
 	let input			= createPostInput( clients.alice.cellAgent() );
-	p1_addr				= await clients.alice.call( DNA_NAME, MAIN_ZOME, "create_post", input );
+	p1_addr				= new ActionHash(
+	    await clients.alice.call( DNA_NAME, MAIN_ZOME, "create_post", input )
+	);
 	log.debug("Post ID: %s", p1_addr );
 
-	expect( p1_addr		).to.be.a("Uint8Array");
+	expect( p1_addr		).to.be.a("ActionHash");
 	expect( p1_addr		).to.have.length( 39 );
 
 	p1				= intoStruct(
@@ -57,7 +59,7 @@ function basic_tests () {
 	    }),
 	    PostStruct
 	);
-	log.debug( json.debug( p1 ) );
+	log.debug("Post: %s", json.debug( p1 ) );
     });
 
 }
