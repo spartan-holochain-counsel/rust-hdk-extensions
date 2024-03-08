@@ -186,7 +186,7 @@ where
     AnyDhtHash: From<T>,
 {
     Ok(
-        get( addr.to_owned(), GetOptions::latest() )?
+        get( addr.to_owned(), GetOptions::network() )?
             .ok_or(HdkExtError::RecordNotFound(&addr.to_owned().into()))?
     )
 }
@@ -196,7 +196,7 @@ where
 ///
 /// This method provides a more deterministic result by unwrapping the [`get_details`] result.
 pub fn must_get_record_details(action: &ActionHash) -> ExternResult<RecordDetails> {
-    let details = get_details( action.to_owned(), GetOptions::latest() )?
+    let details = get_details( action.to_owned(), GetOptions::network() )?
         .ok_or(HdkExtError::RecordNotFound(&action.to_owned().into()))?;
 
     match details {
@@ -229,7 +229,7 @@ where
     AnyDhtHash: From<T>,
 {
     debug!("Checking if address {:?} is available", addr );
-    Ok( get( addr.to_owned(), GetOptions::latest() )?.is_some() )
+    Ok( get( addr.to_owned(), GetOptions::network() )?.is_some() )
 }
 
 
