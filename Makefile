@@ -90,11 +90,11 @@ clean-files-all:	clean-remove-chaff
 clean-files-all-force:	clean-remove-chaff
 	git clean -fdx
 
-PRE_HDK_VERSION = "0.2.1"
-NEW_HDK_VERSION = "0.2.2"
+PRE_HDK_VERSION = "0.2.2"
+NEW_HDK_VERSION = "0.2.7-rc.1"
 
-PRE_HDI_VERSION = "0.3.1"
-NEW_HDI_VERSION = "0.3.2"
+PRE_HDI_VERSION = "0.3.2"
+NEW_HDI_VERSION = "0.3.7-rc.0"
 
 GG_REPLACE_LOCATIONS = ':(exclude)*.lock' tests/*_types Cargo.toml
 
