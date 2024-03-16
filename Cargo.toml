@@ -12,8 +12,8 @@ readme = "README.md"
 name = "hdk_extensions"
 
 [dependencies]
-hdk = "0.2.7-rc.1"
+hdk = "0.3.0-beta-dev.34"
 serde = "1"
 thiserror = "1"
-whi_hdi_extensions = "0.5.0"
 # whi_hdi_extensions = { path = "../whi_hdi_extensions" }
+whi_hdi_extensions = { git = "https://github.com/mjbrisebois/rust-hdi-extensions.git", rev = "c7ec5e1547a9dd3a87bf90e9677521daa643e5ee" }
