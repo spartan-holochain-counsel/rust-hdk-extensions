@@ -55,7 +55,7 @@ publish-crate:			test .cargo/credentials
 # Testing
 #
 DEBUG_LEVEL	       ?= warn
-TEST_ENV_VARS		= RUST_LOG=none LOG_LEVEL=$(DEBUG_LEVEL)
+TEST_ENV_VARS		= LOG_LEVEL=$(DEBUG_LEVEL)
 MOCHA_OPTS		= -n enable-source-maps
 
 reset:
@@ -93,11 +93,11 @@ clean-files-all:	clean-remove-chaff
 clean-files-all-force:	clean-remove-chaff
 	git clean -fdx
 
-PRE_HDI_VERSION = "0.4.0-beta-dev.29"
-NEW_HDI_VERSION = "0.4.0-beta-dev.30"
+PRE_HDI_VERSION = "0.4.0-beta-dev.30"
+NEW_HDI_VERSION = "0.4.0-beta-dev.34"
 
-PRE_HDK_VERSION = "0.3.0-beta-dev.33"
-NEW_HDK_VERSION = "0.3.0-beta-dev.34"
+PRE_HDK_VERSION = "0.3.0-beta-dev.34"
+NEW_HDK_VERSION = "0.3.0-beta-dev.38"
 
 GG_REPLACE_LOCATIONS = ':(exclude)*.lock' tests/*_types Cargo.toml
 
