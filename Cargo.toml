@@ -1,6 +1,6 @@
 [package]
 name = "whi_hdk_extensions"
-version = "0.7.0"
+version = "0.8.0-dev.0"
 authors = ["Matthew Brisebois <matthew@webheroes.ca>"]
 edition = "2018"
 license = "CAL-1.0"
@@ -12,8 +12,8 @@ readme = "README.md"
 name = "hdk_extensions"
 
 [dependencies]
-hdk = "0.3.0-beta-dev.38"
+hdk = "0.3.0-beta-dev.41"
 serde = "1"
 thiserror = "1"
-whi_hdi_extensions = "0.7"
+whi_hdi_extensions = "0.8.0-dev.0"
 # whi_hdi_extensions = { path = "../whi_hdi_extensions" }
