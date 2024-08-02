@@ -94,11 +94,14 @@ clean-files-all:	clean-remove-chaff
 clean-files-all-force:	clean-remove-chaff
 	git clean -fdx
 
-PRE_HDI_VERSION = "0.4.0-beta-dev.34"
-NEW_HDI_VERSION = "0.5.0-dev.1"
+PRE_EDITION = edition = "2018"
+NEW_EDITION = edition = "2021"
 
-PRE_HDK_VERSION = "0.3.0-beta-dev.41"
-NEW_HDK_VERSION = "0.4.0-dev.1"
+PRE_HDI_VERSION = "0.5.0-dev.1"
+NEW_HDI_VERSION = "=0.5.0-dev.10"
+
+PRE_HDK_VERSION = "0.4.0-dev.7"
+NEW_HDK_VERSION = "=0.4.0-dev.11"
 
 GG_REPLACE_LOCATIONS = ':(exclude)*.lock' tests/*_types Cargo.toml
 
@@ -106,6 +109,8 @@ update-hdk-version:
 	git grep -l $(PRE_HDK_VERSION) -- $(GG_REPLACE_LOCATIONS) | xargs sed -i 's/$(PRE_HDK_VERSION)/$(NEW_HDK_VERSION)/g'
 update-hdi-version:
 	git grep -l $(PRE_HDI_VERSION) -- $(GG_REPLACE_LOCATIONS) | xargs sed -i 's/$(PRE_HDI_VERSION)/$(NEW_HDI_VERSION)/g'
+update-edition:
+	git grep -l '$(PRE_EDITION)' -- $(GG_REPLACE_LOCATIONS) | xargs sed -i 's/$(PRE_EDITION)/$(NEW_EDITION)/g'
 
 
 

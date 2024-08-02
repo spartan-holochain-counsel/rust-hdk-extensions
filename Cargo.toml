@@ -2,7 +2,7 @@
 name = "whi_hdk_extensions"
 version = "0.10.0-dev.0"
 authors = ["Matthew Brisebois <matthew@webheroes.ca>"]
-edition = "2018"
+edition = "2021"
 license = "CAL-1.0"
 repository = "https://github.com/mjbrisebois/rust-hdk-extensions"
 description = "Code that works in tandem or is complimentary to the Holochain `hdk` crate"
@@ -12,7 +12,8 @@ readme = "README.md"
 name = "hdk_extensions"
 
 [dependencies]
-hdk = "0.4.0-dev.7"
+hdk = "=0.4.0-dev.11"
 serde = "1"
 thiserror = "1"
-whi_hdi_extensions = { version = "0.10.0-dev.0", path = "../whi_hdi_extensions" }
+whi_hdi_extensions = { version = "0.10.0" }
+# whi_hdi_extensions = { path = "../whi_hdi_extensions" }
