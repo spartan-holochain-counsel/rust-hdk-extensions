@@ -2896,7 +2896,7 @@ dependencies = [
 
 [[package]]
 name = "whi_hdk_extensions"
-version = "0.10.0-dev.0"
+version = "0.10.0"
 dependencies = [
  "hdk",
  "serde",
