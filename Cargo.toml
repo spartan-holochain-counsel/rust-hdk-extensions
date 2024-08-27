@@ -12,8 +12,8 @@ readme = "README.md"
 name = "hdk_extensions"
 
 [dependencies]
-hdk = "=0.4.0-dev.12"
+hdk = "=0.4.0-dev.14"
 serde = "1"
 thiserror = "1"
-whi_hdi_extensions = { version = "0.11.0" }
+whi_hdi_extensions = { version = "0.12" }
 # whi_hdi_extensions = { path = "../whi_hdi_extensions" }
