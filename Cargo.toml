@@ -12,7 +12,7 @@ readme = "README.md"
 name = "hdk_extensions"
 
 [dependencies]
-hdk = "=0.4.0-dev.19"
+hdk = "=0.4.1"
 serde = "1"
 thiserror = "1"
-whi_hdi_extensions = { version = "0.13" }
+whi_hdi_extensions = { version = "0.14" }

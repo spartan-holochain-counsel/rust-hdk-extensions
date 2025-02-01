@@ -97,11 +97,11 @@ clean-files-all-force:	clean-remove-chaff
 PRE_EDITION = edition = "2018"
 NEW_EDITION = edition = "2021"
 
-PRE_HDI_VERSION = "=0.5.0-dev.12"
-NEW_HDI_VERSION = "=0.5.0-dev.17"
+PRE_HDI_VERSION = "=0.5.0-dev.17"
+NEW_HDI_VERSION = "=0.5.1"
 
-PRE_HDK_VERSION = "=0.4.0-dev.14"
-NEW_HDK_VERSION = "=0.4.0-dev.19"
+PRE_HDK_VERSION = "=0.4.0-dev.19"
+NEW_HDK_VERSION = "=0.4.1"
 
 GG_REPLACE_LOCATIONS = ':(exclude)*.lock' tests/*_types Cargo.toml
 
