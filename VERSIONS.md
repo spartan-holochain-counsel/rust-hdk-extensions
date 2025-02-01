@@ -17,3 +17,4 @@
 | **v0.4.0-dev.18**      | 0.11.0          | [0.11.0](https://crates.io/crates/whi_hdi_extensions/0.11.0) | 0.4.0-dev.12      | [holochain-0.4.0-dev.18](https://github.com/holochain/holochain/tree/holochain-0.4.0-dev.18)           |
 | **v0.4.0-dev.20**      | 0.12.0          | [0.12.0](https://crates.io/crates/whi_hdi_extensions/0.12.0) | 0.4.0-dev.14      | [holochain-0.4.0-dev.20](https://github.com/holochain/holochain/tree/holochain-0.4.0-dev.20)           |
 | **v0.4.0-dev.27**      | 0.13.0          | [0.13.0](https://crates.io/crates/whi_hdi_extensions/0.13.0) | 0.4.0-dev.19      | [holochain-0.4.0-dev.27](https://github.com/holochain/holochain/tree/holochain-0.4.0-dev.27)           |
+| **v0.4.1**             | 0.14.0          | [0.14.0](https://crates.io/crates/whi_hdi_extensions/0.14.0) | 0.4.1             | [holochain-0.4.1](https://github.com/holochain/holochain/tree/holochain-0.4.1)                         |
